@@ -14,7 +14,7 @@
  ** limitations under the License.
  *
  **********************************************************************/
- 
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,65 +29,176 @@ namespace Orpalis.Globals.Localization
     /// </summary>
     public sealed class OrpalisLocalizer
     {
-        //todo urgent: try to add all existing languages into the dictionnary.
         /// <summary>
-        /// Maps the different existing languages with their representing ISO 639 code.
+        /// Maps the different existing languages with their representing ISO 639-1 code.
         /// </summary>
         /// <remarks>
-        /// For more information about ISO 639, visit https://www.iso.org/iso-639-language-codes.html
+        /// For more information about ISO 639-1, visit https://www.iso.org/iso-639-language-codes.html
         /// </remarks>
-        private static IReadOnlyDictionary<string, string> ISOLanguages = new Dictionary<string, string>() {
-        {"ar", "العربية"},
-        {"bg", "български"},
-        {"cs", "čeština"},
-        {"da", "dansk"},
-        {"de", "Deutsch"},
-        {"el", "Ελληνικά"},
-        {"en", "English"},
-        {"es", "español"},
-        {"fi", "suomi"},
-        {"fr", "Français"},
-        {"he", "עברית"},
-        {"hi", "हिंदी"},
-        {"hu", "magyar"},
-        {"id", "Indonesia"},
-        {"it", "italiano"},
-        {"ja", "日本語"},
-        {"ko", "한국어"},
-        {"nl", "Nederlands"},
-        {"no", "norsk"},
-        {"pl", "polski"},
-        {"pt", "português"},
-        {"ro", "română"},
-        {"ru", "русский"},
-        {"sk", "slovenčina"},
-        {"sl", "slovenščina"},
-        {"sv", "svenska"},
-        {"th", "ไทย"},
-        {"tr", "Türkçe"},
-        {"vi", "Tiếng Việt"},
-        {"zh", "中文"}
-    };
+        private static readonly IReadOnlyDictionary<string, string> ISOLanguages = new Dictionary<string, string>
+        {
+            //{"aa", "Qafar"},
+            //{"af", "Afrikaans"},
+            //{"ak", "Akan"},
+            //{"am", "አማርኛ"},
+            {"ar", "العربية"},
+            //{"as", "অসমীয়া"},
+            //{"az", "azərbaycan"},
+            //{"ba", "Башҡорт"},
+            //{"be", "Беларуская"},
+            {"bg", "български"},
+            //{"bm", "bamanakan"},
+            //{"bn", "বাংলা"},
+            //{"bo", "བོད་ཡིག"},
+            //{"br", "brezhoneg"},
+            //{"bs", "bosanski"},
+            //{"ca", "català"},
+            //{"ce", "нохчийн"},
+            //{"co", "Corsu"},
+            {"cs", "čeština"},
+            //{"cu", "церковнослове́нскїй"},
+            //{"cy", "Cymraeg"},
+            {"da", "dansk"},
+            {"de", "Deutsch"},
+            //{"dv", "ދިވެހިބަސް"},
+            //{"dz", "རྫོང་ཁ"},
+            //{"ee", "Eʋegbe"},
+            {"el", "Ελληνικά"},
+            {"en", "English"},
+            //{"eo", "esperanto"},
+            {"es", "español"},
+            //{"et", "eesti"},
+            //{"eu", "euskara"},
+            //{"fa", "فارسى"},
+            //{"ff", "Fulah"},
+            {"fi", "suomi"},
+            //{"fo", "føroyskt"},
+            {"fr", "Français"},
+            //{"fy", "Frysk"},
+            //{"ga", "Gaeilge"},
+            //{"gd", "Gàidhlig"},
+            //{"gl", "galego"},
+            //{"gn", "Avañe’ẽ"},
+            //{"gu", "ગુજરાતી"},
+            //{"gv", "Gaelg"},
+            //{"ha", "Hausa"},
+            {"he", "עברית"},
+            {"hi", "हिंदी"},
+            //{"hr", "hrvatski"},
+            {"hu", "magyar"},
+            //{"hy", "Հայերեն"},
+            //{"ia", "interlingua"},
+            {"id", "Indonesia"},
+            //{"ig", "Igbo"},
+            //{"ii", "ꆈꌠꁱꂷ"},
+            //{"is", "íslenska"},
+            {"it", "italiano"},
+            //{"iu", "Inuktitut"},
+            {"ja", "日本語"},
+            //{"jv", "Basa Jawa"},
+            //{"ka", "ქართული"},
+            //{"ki", "Gikuyu"},
+            //{"kk", "қазақ тілі"},
+            //{"kl", "kalaallisut"},
+            //{"km", "ភាសាខ្មែរ"},
+            //{"kn", "ಕನ್ನಡ"},
+            {"ko", "한국어"},
+            //{"kr", "Kanuri"},
+            //{"ks", "کٲشُر"},
+            //{"ku", "کوردیی ناوەڕاست"},
+            //{"kw", "kernewek"},
+            //{"ky", "Кыргыз"},
+            //{"la", "lingua latīna"},
+            //{"lb", "Lëtzebuergesch"},
+            //{"lg", "Luganda"},
+            //{"ln", "lingála"},
+            //{"lo", "ລາວ"},
+            //{"lt", "lietuvių"},
+            //{"lu", "Tshiluba"},
+            //{"lv", "latviešu"},
+            //{"mg", "Malagasy"},
+            //{"mi", "Reo Māori"},
+            //{"mk", "македонски"},
+            //{"ml", "മലയാളം"},
+            //{"mn", "монгол"},
+            //{"mr", "मराठी"},
+            //{"ms", "Bahasa Melayu"},
+            //{"mt", "Malti"},
+            //{"my", "ဗမာ"},
+            //{"nb", "norsk bokmål"},
+            //{"nd", "isiNdebele"},
+            //{"ne", "नेपाली"},
+            {"nl", "Nederlands"},
+            //{"nn", "nynorsk"},
+            {"no", "norsk"},
+            //{"nr", "isiNdebele"},
+            //{"oc", "Occitan"},
+            //{"om", "Oromoo"},
+            //{"or", "ଓଡ଼ିଆ"},
+            //{"os", "ирон"},
+            //{"pa", "ਪੰਜਾਬੀ"},
+            {"pl", "polski"},
+            //{"ps", "پښتو"},
+            {"pt", "português"},
+            //{"rm", "rumantsch"},
+            //{"rn", "Ikirundi"},
+            {"ro", "română"},
+            {"ru", "русский"},
+            //{"rw", "Kinyarwanda"},
+            //{"sa", "संस्कृत"},
+            //{"sd", "سنڌي"},
+            //{"se", "davvisámegiella"},
+            //{"sg", "Sängö"},
+            //{"si", "සිංහල"},
+            {"sk", "slovenčina"},
+            {"sl", "slovenščina"},
+            //{"sn", "chiShona"},
+            //{"so", "Soomaali"},
+            //{"sq", "shqip"},
+            //{"sr", "srpski"},
+            //{"ss", "Siswati"},
+            //{"st", "Sesotho"},
+            {"sv", "svenska"},
+            //{"sw", "Kiswahili"},
+            //{"ta", "தமிழ்"},
+            //{"te", "తెలుగు"},
+            //{"tg", "Тоҷикӣ"},
+            {"th", "ไทย"},
+            //{"ti", "ትግርኛ"},
+            //{"tk", "Türkmen dili"},
+            //{"tn", "Setswana"},
+            //{"to", "lea fakatonga"},
+            {"tr", "Türkçe"},
+            //{"ts", "Xitsonga"},
+            //{"tt", "Татар"},
+            //{"ug", "ئۇيغۇرچە"},
+            //{"uk", "українська"},
+            //{"ur", "اُردو"},
+            //{"uz", "o‘zbek"},
+            //{"ve", "Tshivenḓa"},
+            {"vi", "Tiếng Việt"},
+            //{"vo", "Volapük"},
+            //{"wo", "Wolof"},
+            //{"xh", "isiXhosa"},
+            //{"yi", "ייִדיש"},
+            //{"yo", "Èdè Yorùbá"},
+            {"zh", "中文"},
+            //{"zu", "isiZulu"}
+        };
 
         /// <summary>
         /// Contains the localized strings which have been deserialized.
         /// </summary>
-        private List<OrpalisLocalizedString> _localizedStrings;
+        private readonly List<OrpalisLocalizedString> _localizedStrings;
         /// <summary>
         /// <see cref="DefaultLanguage"/>
         /// </summary>
-        private string _defaultLanguage;
+        private readonly string _defaultLanguage;
 
         /// <summary>
         /// Specifies the default language which is used by the instance.
         /// </summary>
-        public string DefaultLanguage
-        {
-            get
-            {
-                return _defaultLanguage;
-            }
-        }
+        public string DefaultLanguage => _defaultLanguage;
 
 
         /// <summary>
@@ -115,7 +226,7 @@ namespace Orpalis.Globals.Localization
                 {
                     if (!localizedLanguages.Contains(defaultLanguage))
                     {
-                        throw new ArgumentException("The specified default language is not available into the localized data");
+                        throw new ArgumentException("The specified default language is not available into the localized data", nameof(defaultLanguage));
                     }
 
                     _defaultLanguage = defaultLanguage;
@@ -144,23 +255,25 @@ namespace Orpalis.Globals.Localization
             {//todo: implement a lookup sorted dictionnary to speed-up the Name retrieval.
                 if (localizedString.Name == name)
                 {
-                    string value = localizedString.LocalizedValue[language];
+                    string value;
 
-                    if (!string.IsNullOrEmpty(value))
+                    if (localizedString.LocalizedValue.TryGetValue(language, out value) && !string.IsNullOrEmpty(value))
                     {
                         return value;
                     }
+
+                    if (!string.IsNullOrWhiteSpace(_defaultLanguage))
+                    {
+                        return localizedString.LocalizedValue[_defaultLanguage];
+                    }
                     else
                     {
-                        if (!string.IsNullOrWhiteSpace(_defaultLanguage))
-                        {
-                            return localizedString.LocalizedValue[_defaultLanguage];
-                        }
+                        throw new ArgumentException(name + " localization key was found but it contains empty data", nameof(name));
                     }
                 }
             }
 
-            throw new ArgumentException("Unknown " + name + " localization key");
+            throw new ArgumentException("Unknown " + name + " localization key", nameof(name));
         }
 
 
@@ -257,16 +370,16 @@ namespace Orpalis.Globals.Localization
 
 
         /// <summary>
-        /// Gets the ISO 639 code corresponding to the provided language.
+        /// Gets the ISO 639-1 code corresponding to the provided language.
         /// </summary>
         /// <param name="language">The language of interest.</param>
         /// <returns>
-        /// The ISO 639 code corresponding to the provided language.</returns>
+        /// The ISO 639-1 code corresponding to the provided language.</returns>
         /// <remarks>
-        /// For more information about ISO 639, visit https://www.iso.org/iso-639-language-codes.html
+        /// For more information about ISO 639-1, visit https://www.iso.org/iso-639-language-codes.html
         /// </remarks>
         /// <exception cref="ArgumentException">
-        /// Thrown when the ISO 639 code of the provided language is unknown.
+        /// Thrown when the ISO 639-1 code of the provided language is unknown.
         /// </exception>
         public static string GetISOLanguageName(string language)
         {
@@ -275,7 +388,7 @@ namespace Orpalis.Globals.Localization
                 return ISOLanguages[language];
             }
 
-            throw new ArgumentException(language + " ISO 639 code is unknown");
+            throw new ArgumentException(language + " ISO 639-1 code is unknown", nameof(language));
         }
     }
 }
