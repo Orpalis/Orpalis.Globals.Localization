@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Orpalis.Globals.Localization
 {
     /// <summary>
-    /// Represents a localizd string, which can be manipulated by a OrpalisLocalizer instance.
+    /// Represents a localized string, which can be manipulated by a OrpalisLocalizer instance.
     /// </summary>
     public sealed class OrpalisLocalizedString
     {
@@ -38,6 +38,6 @@ namespace Orpalis.Globals.Localization
         /// <summary>
         /// Maps the different values of the localized string with a language.
         /// </summary>
-        public Dictionary<string, string> LocalizedValue = new Dictionary<string, string>();
+        public readonly Dictionary<string, string> LocalizedValue = new Dictionary<string, string>();
     }
 }
