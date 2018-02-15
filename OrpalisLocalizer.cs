@@ -249,8 +249,20 @@ namespace Orpalis.Globals.Localization
         /// <exception cref="ArgumentException">
         /// Thrown when the requested string is unknown. 
         /// </exception>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when the name of the requested string or the language is null.
+        /// </exception>
         public string GetString(string name, string language)
         {
+            if (name == null)
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+            if (language == null)
+            {
+                throw new ArgumentNullException(nameof(language));
+            }
+
             foreach (OrpalisLocalizedString localizedString in _localizedStrings)
             {//todo: implement a lookup sorted dictionnary to speed-up the Name retrieval.
                 if (localizedString.Name == name)
