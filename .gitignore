@@ -1,4 +1,4 @@
-
-.vs/Orpalis.Globals.Localization/v15/.suo
-bin
-obj
+.vs/
+packages/
+bin/
+obj/
