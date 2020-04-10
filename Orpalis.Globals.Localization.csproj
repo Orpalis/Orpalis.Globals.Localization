@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard1.2</TargetFramework>
     <Authors>ORPALIS</Authors>
     <Company>ORPALIS</Company>
     <Copyright>Copyright © 2018 ORPALIS - http://www.orpalis.com</Copyright>
@@ -12,9 +12,9 @@
     <PackageIconUrl>http://www.orpalis.com/images/ORPALIS/logos/IconLogo_ORPALIS.png</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <Description>ORPALIS inhouse JSON based localization solution to easily build localized .NET applications that allows quick and easy translation of the application resources.</Description>
-    <Version>1.0.4</Version>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
+    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.0.0.5</FileVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Orpalis.Globals.Localization.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
