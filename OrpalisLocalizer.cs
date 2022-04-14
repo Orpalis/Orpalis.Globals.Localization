@@ -172,7 +172,7 @@ namespace Orpalis.Globals.Localization
             //{"ts", "Xitsonga"},
             //{"tt", "Татар"},
             //{"ug", "ئۇيغۇرچە"},
-            //{"uk", "українська"},
+            {"uk", "українська"},
             //{"ur", "اُردو"},
             //{"uz", "o‘zbek"},
             //{"ve", "Tshivenḓa"},
