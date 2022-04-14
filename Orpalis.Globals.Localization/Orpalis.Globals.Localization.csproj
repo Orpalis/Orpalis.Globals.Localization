@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.2</TargetFramework>
     <Authors>ORPALIS</Authors>
     <Company>ORPALIS</Company>
-    <Copyright>Copyright © 2022 ORPALIS - http://www.orpalis.com</Copyright>
+    <Copyright>Copyright © 2018 ORPALIS - http://www.orpalis.com</Copyright>
     <PackageProjectUrl>http://www.passportpdf.com</PackageProjectUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/Orpalis/Orpalis.Globals.Localization</RepositoryUrl>
@@ -21,11 +21,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove=".gitignore" />
+    <None Remove="Orpalis.Globals.Localization.snk" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
 </Project>
